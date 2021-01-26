@@ -11,6 +11,8 @@ function App() {
   const [currentScore, setCurrentScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
 
+  document.title = 'LoR Memory Game';
+
   useEffect(() => {
     setCurrentScore(0);
     setSelectedCards({
