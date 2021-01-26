@@ -1,18 +1,18 @@
 import React from 'react';
 
 const Card = (props) => {
-  const { name } = props;
-  const { image } = props;
-  const { id } = props;
+  const cardName = props.name;
+  const cardImage = props.image;
+  const cardId = props.id;
 
   const liftUp = (e) => {
     e.preventDefault();
-    props.liftUp(id);
+    props.liftName(e.target.name);
   };
 
   return (
-    <li key={id} className="card" onClick={liftUp}>
-      <img src={image} alt={name} />
+    <li key={cardId} className="card" name={cardName} onClick={liftUp}>
+      <img src={cardImage} alt={cardName} name={cardName} />
     </li>
   );
 };

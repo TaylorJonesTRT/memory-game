@@ -10,15 +10,21 @@ const Gamearea = (props) => {
   const indexNum = 10;
   const renderedCards = shuffledCards.slice(0, indexNum).map((card) => card);
 
-  const liftUp = (id) => {
-    props.cardClick(id);
+  const liftName = (name) => {
+    props.cardClick(name);
   };
 
   return (
     <div className="gamearea">
       <ul className="gamearea">
         {renderedCards.map((card) => (
-          <Card name={card.name} image={card.image} id={card.id} key={card.id} liftUp={liftUp} />
+          <Card
+            name={card.name}
+            image={card.image}
+            id={card.id}
+            key={card.id}
+            liftName={liftName}
+          />
         ))}
       </ul>
     </div>

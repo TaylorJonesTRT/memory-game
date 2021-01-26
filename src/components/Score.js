@@ -1,11 +1,15 @@
 import React from 'react';
 import '../styles/Header.css';
 
-const Score = () => (
-  <div className="score">
-    <div className="score-name">Current Score:</div>
-    <div className="score-points">21</div>
-  </div>
-);
+const Score = (props) => {
+  const { score } = props;
+
+  return (
+    <div className="score">
+      <div className="score-name">{props.scoreTitle}</div>
+      <div className="score-points">{score}</div>
+    </div>
+  );
+};
 
 export default Score;

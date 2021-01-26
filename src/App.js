@@ -3,21 +3,44 @@ import './styles/App.css';
 import Header from './components/Header';
 import Gamearea from './components/Gamearea';
 
-function App() {
-  const [selectedCards, setSelectedCards] = useState([]);
-  useEffect(() => {}, [selectedCards]);
+const initialCardSelection = [];
 
-  const addSelected = (id) => {
-    // TODO: Need to check for the ID in the selectedCards state array
-    // TODO: If there need to start game over and log score if higher than best
-    // TODO: If not there, add to state array and add +1 to current score
-    const oldSelected = selectedCards;
+function App() {
+  const [selectedCards, setSelectedCards] = useState({ cardIds: [] });
+  // Debating on keeping the following states here or moving to the Scoreboard component
+  const [currentScore, setCurrentScore] = useState(0);
+  const [bestScore, setBestScore] = useState(0);
+
+  useEffect(() => {
+    setCurrentScore(0);
+    setSelectedCards({
+      cardIds: initialCardSelection,
+    });
+  }, [bestScore]);
+
+  const addSelected = (name) => {
+    const selected = selectedCards.cardIds;
+    if (selected.includes(name)) {
+      if (currentScore > bestScore) {
+        setBestScore(currentScore);
+      } else {
+        setSelectedCards({
+          cardIds: initialCardSelection,
+        });
+        setCurrentScore(0);
+      }
+    } else {
+      setSelectedCards({
+        cardIds: [...selected, name],
+      });
+      setCurrentScore(currentScore + 1);
+    }
   };
 
   return (
     <div className="App">
       <div className="wrapper">
-        <Header />
+        <Header currentScore={currentScore} bestScore={bestScore} />
         <Gamearea cardClick={addSelected} />
       </div>
     </div>
