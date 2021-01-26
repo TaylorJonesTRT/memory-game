@@ -1,5 +1,7 @@
 # Memory Game
 
+[Live Demo](https://taylorjonestrt.github.io/memory-game/)
+
 Memory Game is a challenge of memorization (name suites the project, doen't it). The objective is to keep going until you cant score any higher (right now the highest score possible is 36 or 37). If you click on a card that you haven't already you're score will go up, but if you click on one you have previously clicked on (in that current game) then it'll reset the game and update the best score if you surpassed it.
 
 
