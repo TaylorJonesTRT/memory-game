@@ -1,12 +1,17 @@
 body {
   width: 100vw;
   height: 100vh;
-  background: #303030;
+  background: #ffffff url('../images/bg.jpg') no-repeat center center fixed;
   margin: 0 auto;
   font-family: 'Roboto Condensed', sans-serif;
 }
 
 .App {
   width: 100%;
+  margin: 0 auto;
+}
+
+.wrapper {
+  width: 70%;
   margin: 0 auto;
 }

@@ -1,0 +1,24 @@
+.gamearea {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 5em;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+.gamearea > ul {
+  list-style-type: none;
+  vertical-align: middle;
+}
+
+.gamearea > li {
+  display: inline;
+}
+
+.card {
+  margin: 2px;
+}
+.card > img {
+  width: 10em;
+  height: auto;
+}

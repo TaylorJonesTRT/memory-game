@@ -30,7 +30,10 @@
                     ".jsx"
                 ]
             }
-        ]
+        ],
+        "no-unused-vars": "warn",
+        "array-callback-return": "warn",
+        "react/prop-types": "off"
     },
     "parser": "babel-eslint"
 }
