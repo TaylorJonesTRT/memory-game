@@ -5,8 +5,13 @@ const Card = (props) => {
   const { image } = props;
   const { id } = props;
 
+  const liftUp = (e) => {
+    e.preventDefault();
+    props.liftUp(id);
+  };
+
   return (
-    <li key={id} className="card">
+    <li key={id} className="card" onClick={liftUp}>
       <img src={image} alt={name} />
     </li>
   );

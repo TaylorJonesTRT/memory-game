@@ -17,8 +17,17 @@
 
 .card {
   margin: 2px;
+  cursor: pointer;
 }
+
 .card > img {
   width: 10em;
   height: auto;
+  transition: transform 0.4s;
+}
+.card > img:hover {
+  width: 11em;
+  transform: scale(1.25);
+  position: absolute;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
 }

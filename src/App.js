@@ -7,17 +7,18 @@ function App() {
   const [selectedCards, setSelectedCards] = useState([]);
   useEffect(() => {}, [selectedCards]);
 
-  const addSelected = (e) => {
-    // TODO: Come back to this when cards are setup
+  const addSelected = (id) => {
+    // TODO: Need to check for the ID in the selectedCards state array
+    // TODO: If there need to start game over and log score if higher than best
+    // TODO: If not there, add to state array and add +1 to current score
     const oldSelected = selectedCards;
-    setSelectedCards(...oldSelected, e.target.name);
   };
 
   return (
     <div className="App">
       <div className="wrapper">
         <Header />
-        <Gamearea />
+        <Gamearea cardClick={addSelected} />
       </div>
     </div>
   );
